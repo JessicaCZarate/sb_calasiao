@@ -2,46 +2,59 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { navigation } from "@/app/lib/navigation";
+import Link from "next/link";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+const pathname = usePathname();
+
+   const isActive = (href: string) => {
+    if (href === "/") {
+      return pathname === href;
+    }
+    return pathname.startsWith(href);
+  };
+
+  const activeLinkStyles = "shadow bg-gray-300 rounded-md";
 
   return (
-    <>
-      <header className="absolute inset-x-0 top-0 z-50">
+      <header className="sticky inset-x-0 top-0 z-[50]">
         <nav
           aria-label="Global"
-          className="flex items-center justify-between p-6 lg:px-8">
+          className="flex items-center justify-between px-6 py-3 lg:px-8 bg-white bg-opacity-50 backdrop-blur-[2px] shadow">
           <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5">
+            <Link href="/" className="-m-1.5 p-1.5 flex gap-2 text-center align-middle">
               <span className="sr-only">Municipality of Calasiao</span>
               <Image
-                alt=""
+                alt="sb logo"
                 src="/image/calasiao.png"
-                className="h-8 w-auto md:h-11"
+                className="h-11 w-auto ring-2 ring-green-900 rounded-full"
                 width={100}
-                height={100}
-              />
-            </a>
+              height={100}
+              priority
+            />
+            <p className="font-figsemibold text-4xl pt-[3.5px]">SB.</p>
+            </Link>
           </div>
           <div className="flex lg:hidden">
             <button
               type="button"
               onClick={() => setMobileMenuOpen(true)}
-              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-200">
+              className="inline-flex items-center justify-center rounded-md px-2.5 py-3 text-slate-900">
               <span className="sr-only">Open main menu</span>
-              <Bars3Icon aria-hidden="true" className="size-6" />
+              <Bars3Icon aria-hidden="true" className="size-6 " />
             </button>
           </div>
-          <div className="hidden lg:flex lg:gap-x-12">
+          <div className="hidden lg:flex lg:gap-x-1">
             {navigation.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="text-sm/6 font-semibold text-gray-200 hover:text-indigo-600">
+                className={`text-md/6 text-slate-900 hover:shadow font-figregular tracking-wider hover:bg-gray-300 py-3 px-5 hover:rounded-md ${isActive(item.href) ? activeLinkStyles : ""}`}>
                 {item.name}
               </a>
             ))}
@@ -51,19 +64,20 @@ export default function Navbar() {
           open={mobileMenuOpen}
           onClose={setMobileMenuOpen}
           className="lg:hidden">
-          <div className="fixed inset-0 z-50" />
+          <div className="fixed inset-0 z-100" />
           <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
-              <a href="#" className="-m-1.5 p-1.5">
+              <Link href="/" className="-m-1.5 p-1.5">
                 <span className="sr-only">Sangguniang Bayan Calasiao</span>
                 <Image
-                  alt=""
+                  alt="calasiao logo"
                   src="/image/calasiao.png"
-                  className="h-8 w-auto"
+                  className="h-8 w-auto ring-2 ring-green-900 rounded-full"
                   width={100}
                   height={100}
+                  priority
                 />
-              </a>
+              </Link>
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(false)}
@@ -79,7 +93,7 @@ export default function Navbar() {
                     <a
                       key={item.name}
                       href={item.href}
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-100">
+                      className="-mx-3 block rounded-lg px-3 py-4 text-base/7 font-figsemibold text-gray-900 hover:bg-gray-200">
                       {item.name}
                     </a>
                   ))}
@@ -89,6 +103,5 @@ export default function Navbar() {
           </DialogPanel>
         </Dialog>
       </header>
-    </>
   );
 }

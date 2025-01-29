@@ -1,6 +1,8 @@
 import type { Config } from "tailwindcss";
+import daisyui from "daisyui"
+import require from "tailwind-scrollbar";
 
-export default {
+const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -12,7 +14,21 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        figtree: ['var(--font-figtree)'],
+      },
+      fontWeight: {
+        figthin: "300",
+        figlight: "400",
+        figregular: "500",
+        figmedium: "600",
+        figsemibold: "700",
+        figbold: "800",
+        figextrabold: "900",
+      },
     },
   },
-  plugins: [],
-} satisfies Config;
+  plugins: [daisyui, require('tailwind-scrollbar')]
+};
+
+export default config;
