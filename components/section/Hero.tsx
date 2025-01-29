@@ -1,10 +1,12 @@
+import ServicesStrip from "@/components/ServicesStrip";
+
 export default function Hero() {
   return (
     <div className="relative bg-blend-multiply bg-gray-600 bg-[url('/image/sb.jpg')] bg-cover bg-center bg-no-repeat">
-      <div className="relative isolate px-6 py-32">
+      <div className="relative isolate px-6 py-32 bg-gradient-to-b from-transparent to-90% to-slate-950/80">
         <div className="mx-auto max-w-2xl">
           <div className="text-center items-center flex flex-col -mt-16 md:mb-10">
-            <p className="text-sm sm:text-lg md:text-2xl font-figregular text-pretty text-gray-300">
+            <p className="text-lg sm:text-xl md:text-2xl font-figsemibold text-pretty text-gray-300 tracking-wider">
               Municipality of
             </p>
             <div className="relative inline-block isolate">
@@ -15,6 +17,7 @@ export default function Hero() {
                 CALASIAO
               </h1>
             </div>
+            <ServicesStrip />
           </div>
         </div>
       </div>

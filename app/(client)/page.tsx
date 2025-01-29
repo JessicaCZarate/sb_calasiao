@@ -10,7 +10,7 @@ export default function Home() {
         {Array.from({ length: 9 }).map((_, index) => (
           <Card key={index} />
         ))}
-        </div>
+      </div>
     </>
   );
 }
