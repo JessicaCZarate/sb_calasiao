@@ -27,7 +27,7 @@ const pathname = usePathname();
           aria-label="Global"
           className="flex items-center justify-between p-2 sm:px-4 py-2.5 bg-gray-100 md:px-6 md:py-3 lg:px-7 lg:bg-white lg:bg-opacity-50 lg:backdrop-blur-[2px] shadow">
           <div className="flex lg:flex-1">
-            <Link href="/" className="sm:gap-2 text-center inline-flex items-center hover:bg-gray-300 hover:rounded-md px-2.5 py-1.5">
+            <Link href="/" className="gap-1 sm:gap-2 text-center inline-flex items-center hover:bg-gray-300 hover:rounded-md px-2.5 py-1.5">
               <span className="sr-only">Municipality of Calasiao</span>
               <Image
                 alt="sb logo"
