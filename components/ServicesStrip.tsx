@@ -8,10 +8,10 @@ const ServicesStrip = () => {
         <br /> through{" "}
         <span className="text-yellow-300 inline-flex flex-col h-[calc(theme(fontSize.sm)*theme(lineHeight.tight))] sm:h-[calc(theme(fontSize.lg)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.xl)*theme(lineHeight.tight))] lg:h-[calc(theme(fontSize.2xl)*theme(lineHeight.tight))] overflow-hidden">
           <ul className="block animate-text-slide text-left leading-tight [&_li]:block tracking-wider">
-            <li>Resolution.</li>
-            <li>Ordinance.</li>
-            <li>Public Services.</li>
-            <li aria-hidden="true">Resolution</li>
+            <li>Resolutions.</li>
+            <li>Ordinances.</li>
+            <li>Public Hearings.</li>
+            <li aria-hidden="true">Resolutions.</li>
           </ul>
         </span>
       </div>

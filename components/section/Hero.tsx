@@ -2,10 +2,10 @@ import ServicesStrip from "@/components/ServicesStrip";
 
 export default function Hero() {
   return (
-    <div className="relative bg-blend-multiply bg-gray-600 bg-[url('/image/sb.jpg')] bg-cover bg-center bg-no-repeat">
-      <div className="relative isolate px-6 py-32 bg-gradient-to-b from-transparent to-90% to-slate-950/80">
+    <div className="bg-blend-multiply bg-gray-600 bg-[url('/image/sb.jpg')] bg-cover bg-center bg-no-repeat shadow">
+      <div className="relative isolate px-6 py-32 bg-gradient-to-b from-transparent to-99% to-slate-950 shadow">
         <div className="mx-auto max-w-2xl">
-          <div className="text-center items-center flex flex-col -mt-16 md:mb-10">
+          <div className="text-center items-center flex flex-col -mt-14 sm:-mt-14">
             <p className="text-lg sm:text-xl md:text-2xl font-figsemibold text-pretty text-gray-300 tracking-wider">
               Municipality of
             </p>
