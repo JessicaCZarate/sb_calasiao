@@ -27,7 +27,7 @@ export default function Officials() {
                       <span className="font-figmedium text-md text-stone-400 py-1 mb-1 tracking-wider">
                         Councilors
                       </span>
-                      <span className="font-figsemibold break-words text-sm pl-24">
+                      <span className="font-figsemibold break-words text-sm pl-24 text-black">
                         {official.name}
                       </span>
                     </div>
@@ -39,7 +39,7 @@ export default function Officials() {
                 <ul key={index} className="flex flex-col space-y-2">
                   <li className="flex w-full py-1">
                     <div className="flex flex-col w-full items-start">
-                      <span className="font-figsemibold break-words text-sm pl-24">
+                      <span className="font-figsemibold break-words text-sm pl-24 text-black">
                         {official.name}
                       </span>
                     </div>
@@ -54,7 +54,7 @@ export default function Officials() {
                       <span className="font-figmedium text-md text-stone-400 py-1 mb-1 tracking-wider">
                         {official.position}
                       </span>
-                      <span className="font-figsemibold break-words text-sm pl-24">
+                      <span className="font-figsemibold break-words text-sm pl-24 text-black">
                         {official.name}
                       </span>
                     </div>
