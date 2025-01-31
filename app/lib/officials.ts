@@ -60,7 +60,7 @@ export const officials = [
     image: "/image/",
   },
   {
-    name: "BRYAN B. CALAUNANA",
+    name: "BRYAN B. CALAUNAN",
     position: "SB Secretary",
     image: "/image/",
   },
