@@ -5,7 +5,7 @@ export default function Officials() {
   let firstCouncilorDetected = false;
 
   return (
-    <section className="justify-center items-center text-center flex mb-10 flex-col bg-slate-50 sm:bg-slate-100">
+    <section className="justify-center items-center flex mb-10 flex-col bg-slate-50 sm:bg-slate-100">
       <div className="flex text-center justify-center items-center">
         <h2 className="text-3xl sm:text-4xl tracking-wide text-black font-figmedium px-4 py-6">
           The Officials
@@ -24,11 +24,13 @@ export default function Officials() {
                   <ul key={index} className="flex flex-col space-y-2">
                     <li className="flex w-full py-1 sm:w-full">
                       <div className="flex flex-col sm:flex-row w-full items-start sm:items-center">
-                        <span className="sm:flex-none font-figmedium text-md text-stone-400 py-1 mb-1 tracking-wider">
+                        <span
+                          className="sm:flex-none font-figmedium 
+                        -md text-stone-400 py-1 mb-1 tracking-wider">
                           Councilors
                         </span>
                         <hr className="flex-grow mx-2 border-t-[0.3px] border-black/20" />
-                        <span className="sm:flex-none font-figsemibold break-words text-sm sm:text-base pl-24 sm:pl-0 text-black">
+                        <span className="sm:flex-none font-figsemibold break-words text-left text-sm sm:text-base pl-24 sm:pl-0 text-black">
                           {official.name}
                         </span>
                       </div>
@@ -44,7 +46,7 @@ export default function Officials() {
                           Councilors
                         </span>
                         <hr className="hidden sm:flex sm:flex-grow mx-2 border-t-0 border-black/20" />
-                        <span className="sm:flex-none font-figsemibold break-words sm:text-base text-sm pl-24 sm:pl-0 text-black">
+                        <span className="sm:flex-none font-figsemibold break-words sm:text-base text-sm pl-24 sm:pl-0 text-black text-left">
                           {official.name}
                         </span>
                       </div>
@@ -60,7 +62,7 @@ export default function Officials() {
                           {official.position}
                         </span>
                         <hr className="flex-grow mx-2 border-t-[0.3px] border-black/20" />
-                        <span className="sm:flex-none font-figsemibold sm:text-base break-words text-sm pl-24 sm:pl-0 text-black">
+                        <span className="sm:flex-none text-left font-figsemibold sm:text-base break-words text-sm pl-24 sm:pl-0 text-black">
                           {official.name}
                         </span>
                       </div>
