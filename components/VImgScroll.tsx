@@ -3,7 +3,7 @@ import React from "react";
 const VImgScroll = () => {
   return (
     <div className="flex w-full justify-center bg-[url('/image/hhall.JPG')] bg-cover bg-center bg-no-repeat shadow bg-blend-multiply bg-gray-500 items-center py-5 mt-4 lg:mt-0">
-      <div className="carousel carousel-vertical rounded-lg h-96 sm:mx-20">
+      <div className="carousel carousel-vertical rounded-lg h-72 sm:h-96 sm:mx-20">
         <div className="carousel-item h-full">
           <img src="https://img.daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.webp" />
         </div>

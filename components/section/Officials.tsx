@@ -5,7 +5,7 @@ export default function Officials() {
   let firstCouncilorDetected = false;
 
   return (
-    <section className="justify-center items-center text-center flex mb-10 flex-col">
+    <section className="justify-center items-center text-center flex mb-10 flex-col bg-slate-50 sm:bg-slate-100">
       <div className="flex text-center justify-center items-center">
         <h2 className="text-3xl sm:text-4xl tracking-wide text-black font-figmedium px-4 py-6">
           The Officials
