@@ -11,7 +11,7 @@ export default function Officials() {
           The Officials
         </h2>
       </div>
-      <div className="flex flex-col lg:flex-row">
+      <div className="flex flex-col lg:flex-row w-full">
         <div className="flex flex-col w-full items-center">
           <div className="px-6 py-2 max-w-[23rem] mx-auto sm:max-w-xl sm:w-[36rem] bg-white shadow rounded-sm">
             {officials.map((official, index) => {
@@ -24,9 +24,7 @@ export default function Officials() {
                   <ul key={index} className="flex flex-col space-y-2">
                     <li className="flex w-full py-1 sm:w-full">
                       <div className="flex flex-col sm:flex-row w-full items-start sm:items-center">
-                        <span
-                          className="sm:flex-none font-figmedium 
-                        -md text-stone-400 py-1 mb-1 tracking-wider">
+                        <span className="sm:flex-none font-figmedium text-stone-400 py-1 mb-1 tracking-wider">
                           Councilors
                         </span>
                         <hr className="flex-grow mx-2 border-t-[0.3px] border-black/20" />

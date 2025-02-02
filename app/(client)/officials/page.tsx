@@ -1,4 +1,5 @@
 import { officials } from "@/app/lib/officials";
+import Image from "next/image";
 
 export default function Page() {
   return (
@@ -15,6 +16,7 @@ export default function Page() {
               <span className="sm:flex-none text-left font-figsemibold sm:text-base break-words text-sm pl-24 sm:pl-0 text-black">
                 {official.name}
               </span>
+              <Image alt="" src={official.image} width={100} height={100} />
             </div>
           </li>
         </ul>
