@@ -3,24 +3,108 @@ import Image from "next/image";
 
 export default function Page() {
   return (
-    <section className="h-screen bg-slate-100">
-      <h1>Municipal Officials</h1>
-      {officials.map((official, index) => (
-        <ul key={index} className="flex flex-col space-y-2">
-          <li className="flex w-full py-1 sm:w-full">
-            <div className="flex flex-col sm:flex-row w-full items-start sm:items-center">
-              <span className="sm:flex-none font-figmedium text-md text-stone-400 py-1 mb-1 tracking-wider">
-                {official.position}
-              </span>
-              <hr className="flex-grow mx-2 border-t-[0.3px] border-black/20" />
-              <span className="sm:flex-none text-left font-figsemibold sm:text-base break-words text-sm pl-24 sm:pl-0 text-black">
-                {official.name}
-              </span>
-              <Image alt="" src={official.image} width={100} height={100} />
-            </div>
-          </li>
-        </ul>
-      ))}
+    <section className="bg-slate-100">
+      <h1 className="text-2xl text-center p-4 font-figlight">
+        Municipal Officials
+      </h1>
+      {officials.map((official, index) => {
+        const isCouncilor = official.position.toLowerCase() === "councilor";
+        const isMayor = official.position.toLowerCase() === "mayor";
+        const isViceMayor = official.position.toLowerCase() === "vice mayor";
+        if (isMayor) {
+          return (
+            <ul key={index} className="flex flex-col space-y-2 relative w-full">
+              <li className="flex w-full flex-col">
+                <div className="flex flex-col w-full items-center justify-center space-y-2">
+                  <span className="absolute font-figmedium text-8xl text-center w-full bottom-9 text-stone-400/40 tracking-tighter">
+                    {official.position}
+                  </span>
+                  <span className="text-left font-figsemibold break-words text-sm text-black">
+                    MAYOR {official.name}
+                  </span>
+                  <Image
+                    alt=""
+                    src={official.image}
+                    width={100}
+                    height={100}
+                    className="rounded-md h-80 w-auto"
+                  />
+                </div>
+                <div className="divider"></div>
+              </li>
+            </ul>
+          );
+        } else if (isViceMayor) {
+          return (
+            <ul key={index} className="flex flex-col space-y-2 relative w-full">
+              <li className="flex w-full flex-col">
+                <div className="flex flex-col w-full items-center justify-center space-y-2">
+                  <span className="absolute font-figmedium text-[3.9rem] text-center w-full bottom-9 text-stone-400/40 tracking-tighter">
+                    {official.position}
+                  </span>
+                  <span className="text-left font-figsemibold break-words text-sm text-black">
+                    VICE MAYOR {official.name}
+                  </span>
+                  <Image
+                    alt=""
+                    src={official.image}
+                    width={100}
+                    height={100}
+                    className="rounded-md h-80 w-auto"
+                  />
+                </div>
+                <div className="divider"></div>
+              </li>
+            </ul>
+          );
+        } else if (isCouncilor) {
+          return (
+            <ul key={index} className="flex flex-col space-y-2 relative w-full">
+              <li className="flex w-full flex-col">
+                <div className="flex flex-col w-full items-center justify-center space-y-2">
+                  <span className="absolute font-figmedium text-7xl text-center w-full bottom-9 text-stone-400/40 tracking-tighter">
+                    {official.position}
+                  </span>
+                  <span className="text-left font-figsemibold break-words text-sm text-black">
+                    COUN. {official.name}
+                  </span>
+                  <Image
+                    alt=""
+                    src={official.image}
+                    width={100}
+                    height={100}
+                    className="rounded-md h-80 w-auto"
+                  />
+                </div>
+                <div className="divider"></div>
+              </li>
+            </ul>
+          );
+        } else {
+          return (
+            <ul key={index} className="flex flex-col space-y-2 relative w-full">
+              <li className="flex w-full flex-col">
+                <div className="flex flex-col w-full items-center justify-center space-y-2">
+                  <span className="absolute font-figmedium text-[3.2rem] leading-10 text-center w-full bottom-9 text-stone-400/40 tracking-tighter">
+                    {official.position}
+                  </span>
+                  <span className="text-left font-figsemibold break-words text-sm text-black">
+                    HON. {official.name}
+                  </span>
+                  <Image
+                    alt=""
+                    src={official.image}
+                    width={100}
+                    height={100}
+                    className="rounded-md h-80 w-auto"
+                  />
+                </div>
+                <div className="divider"></div>
+              </li>
+            </ul>
+          );
+        }
+      })}
     </section>
   );
 }
