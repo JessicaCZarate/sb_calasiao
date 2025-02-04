@@ -1,4 +1,5 @@
 import { officials } from "@/app/lib/officials";
+import Hero from "@/components/section/Hero";
 import Image from "next/image";
 
 export default function Page() {
@@ -8,6 +9,12 @@ export default function Page() {
 
   return (
     <section className="bg-slate-100">
+      <Hero
+        src="officials"
+        title="Officials"
+        services={false}
+        subtitle="The Municipal"
+      />
       <h1 className="text-2xl text-center p-4 font-figlight text-black">
         Municipal Officials
       </h1>
@@ -68,7 +75,7 @@ export default function Page() {
           }
         })}
 
-        <ul className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:grid-cols-2">
+        <ul className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2">
           {councilors
             .slice(0, councilors.length - (councilors.length % 3))
             .map((official, index) => (

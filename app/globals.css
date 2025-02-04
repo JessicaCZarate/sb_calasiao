@@ -5,7 +5,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --font-figtree: 'Figtree', sans-serif;
+  --font-figtree: "Figtree", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,4 +25,11 @@ body {
   .active {
     @apply shadow bg-gray-300 rounded-md;
   }
+}
+
+.defaultHero {
+  background-image: url("/image/sb.jpg");
+}
+.officialHero {
+  background-image: url("/image/hall.JPG");
 }

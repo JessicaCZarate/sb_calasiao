@@ -1,26 +1,49 @@
+import React from "react";
 import ServicesStrip from "@/components/ServicesStrip";
 
-export default function Hero() {
+interface HeroProps {
+  src: string;
+  title: string;
+  services: boolean;
+  subtitle: string;
+}
+
+const Hero: React.FC<HeroProps> = ({ src, title, services, subtitle }) => {
+  let heroClass = "";
+
+  if (src === "default") {
+    heroClass = "defaultHero";
+  } else if (src === "officials") {
+    heroClass = "officialHero";
+  } else if (src === "services") {
+    heroClass = "serviceHero";
+  } else {
+    heroClass = src;
+  }
+
   return (
-    <div className="bg-blend-multiply bg-gray-600 bg-[url('/image/sb.jpg')] bg-cover bg-center bg-no-repeat shadow">
+    <div
+      className={`bg-blend-multiply bg-gray-600 bg-cover bg-center bg-no-repeat shadow ${heroClass}`}>
       <div className="relative isolate px-6 py-32 bg-gradient-to-b from-transparent to-99% to-slate-950 shadow">
         <div className="mx-auto max-w-2xl">
           <div className="text-center items-center flex flex-col -mt-14 sm:-mt-14">
             <p className="text-lg sm:text-xl md:text-2xl font-figsemibold text-pretty text-gray-300 tracking-wider">
-              Municipality of
+              {subtitle}
             </p>
             <div className="relative inline-block isolate">
               <h1 className="text-[52px] sm:text-7xl md:text-8xl font-figsemibold tracking-tight text-balance text-transparent bg-gradient-to-r from-yellow-400 to-green-800 bg-clip-text z-10">
-                CALASIAO
+                {title}
               </h1>
               <h1 className="absolute top-0 text-[52px] sm:text-7xl md:text-8xl font-figsemibold tracking-tight text-balance text-transparent bg-gradient-to-r from-yellow-400 to-green-500 bg-clip-text blur opacity-60">
-                CALASIAO
+                {title}
               </h1>
             </div>
-            <ServicesStrip />
+            {services && <ServicesStrip />}
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default Hero;
