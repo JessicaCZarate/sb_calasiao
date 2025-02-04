@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Page() {
   return (
     <section className="bg-slate-100">
-      <h1 className="text-2xl text-center p-4 font-figlight">
+      <h1 className="text-2xl text-center p-4 font-figlight text-black">
         Municipal Officials
       </h1>
       {officials.map((official, index) => {
@@ -16,14 +16,14 @@ export default function Page() {
             <ul key={index} className="flex flex-col space-y-2 relative w-full">
               <li className="flex w-full flex-col">
                 <div className="flex flex-col w-full items-center justify-center space-y-2">
-                  <span className="absolute font-figmedium text-8xl text-center w-full bottom-9 text-stone-400/40 tracking-tighter">
+                  <span className="absolute font-figmedium text-8xl text-center w-full bottom-9 text-stone-400/40 tracking-tighter right-[0.3rem]">
                     {official.position}
                   </span>
                   <span className="text-left font-figsemibold break-words text-sm text-black">
                     MAYOR {official.name}
                   </span>
                   <Image
-                    alt=""
+                    alt={`${official.name}`}
                     src={official.image}
                     width={100}
                     height={100}
@@ -46,7 +46,7 @@ export default function Page() {
                     VICE MAYOR {official.name}
                   </span>
                   <Image
-                    alt=""
+                    alt={`${official.name}`}
                     src={official.image}
                     width={100}
                     height={100}
@@ -69,7 +69,7 @@ export default function Page() {
                     COUN. {official.name}
                   </span>
                   <Image
-                    alt=""
+                    alt={`${official.name}`}
                     src={official.image}
                     width={100}
                     height={100}
@@ -92,7 +92,7 @@ export default function Page() {
                     HON. {official.name}
                   </span>
                   <Image
-                    alt=""
+                    alt={`${official.name}`}
                     src={official.image}
                     width={100}
                     height={100}
