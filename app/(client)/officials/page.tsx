@@ -96,7 +96,7 @@ export default function Page() {
         </ul>
 
         {councilors.length % 3 === 2 && (
-          <ul className="grid grid-cols-2 gap-0 justify-items-center">
+          <ul className="grid grid-cols-1 lg:grid-cols-2 gap-0 justify-items-center">
             {councilors.slice(councilors.length - 2).map((official, index) => (
               <li
                 key={index}
