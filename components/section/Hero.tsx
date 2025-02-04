@@ -15,8 +15,6 @@ const Hero: React.FC<HeroProps> = ({ src, title, services, subtitle }) => {
     heroClass = "defaultHero";
   } else if (src === "officials") {
     heroClass = "officialHero";
-  } else if (src === "services") {
-    heroClass = "serviceHero";
   } else {
     heroClass = src;
   }
@@ -26,7 +24,10 @@ const Hero: React.FC<HeroProps> = ({ src, title, services, subtitle }) => {
       className={`bg-blend-multiply bg-gray-600 bg-cover bg-center bg-no-repeat shadow ${heroClass}`}>
       <div className="relative isolate px-6 py-32 bg-gradient-to-b from-transparent to-99% to-slate-950 shadow">
         <div className="mx-auto max-w-2xl">
-          <div className="text-center items-center flex flex-col -mt-14 sm:-mt-14">
+          <div
+            className={`text-center items-center flex flex-col -mt-14 sm:-mt-14 ${
+              !services ? "-mb-24 sm:-mb-0" : ""
+            }`}>
             <p className="text-lg sm:text-xl md:text-2xl font-figsemibold text-pretty text-gray-300 tracking-wider">
               {subtitle}
             </p>

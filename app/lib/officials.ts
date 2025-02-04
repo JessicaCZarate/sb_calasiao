@@ -6,7 +6,7 @@ export const officials = [
       "https://img.daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.webp",
   },
   {
-    name: "NESTOR A. GRABILLO ",
+    name: "NESTOR A. GABRILLO ",
     position: "Vice Mayor",
     image:
       "https://img.daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.webp",

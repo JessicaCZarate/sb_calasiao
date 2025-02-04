@@ -87,7 +87,7 @@ export default function Page() {
                     {official.position}
                   </span>
                   <span className="text-left font-figsemibold break-words text-sm text-black">
-                    COUN. {official.name}
+                    COUNCILOR {official.name}
                   </span>
                   <Image
                     alt={`${official.name}`}
