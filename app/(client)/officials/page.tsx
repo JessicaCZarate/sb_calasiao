@@ -34,7 +34,7 @@ export default function Page() {
                       Mayor
                     </span>
                     <span className="text-left font-figsemibold break-words text-sm text-black">
-                      HON. {official.name}
+                      {official.name}
                     </span>
                     <Image
                       alt={`${official.name}`}
@@ -62,7 +62,7 @@ export default function Page() {
                       Vice Mayor
                     </span>
                     <span className="text-left font-figsemibold break-words text-sm text-black">
-                      HON. DR. {official.name}
+                      {official.name}
                     </span>
                     <Image
                       alt={`${official.name}`}
@@ -94,7 +94,7 @@ export default function Page() {
                       {official.position}
                     </span>
                     <span className="text-left font-figsemibold break-words text-sm text-black">
-                      HON. {official.name}
+                      {official.name}
                     </span>
                     <Image
                       alt={`${official.name}`}
@@ -123,7 +123,7 @@ export default function Page() {
                     {official.position}
                   </span>
                   <span className="text-left font-figsemibold break-words text-sm text-black">
-                    HON. {official.name}
+                    {official.name}
                   </span>
                   <Image
                     alt={`${official.name}`}
@@ -160,7 +160,7 @@ export default function Page() {
                       SK Federation President
                     </span>
                     <span className="text-left font-figsemibold break-words text-sm text-black">
-                      HON. {official.name}
+                      {official.name}
                     </span>
                     <Image
                       alt={`${official.name}`}
@@ -188,7 +188,7 @@ export default function Page() {
                       Liga President
                     </span>
                     <span className="text-left font-figsemibold break-words text-sm text-black">
-                      HON. {official.name}
+                      {official.name}
                     </span>
                     <Image
                       alt={`${official.name}`}
