@@ -24,7 +24,7 @@ export default function Officials() {
                   <ul key={index} className="flex flex-col space-y-2">
                     <li className="flex w-full py-1 sm:w-full">
                       <div className="flex flex-col sm:flex-row w-full items-start sm:items-center">
-                        <span className="sm:flex-none font-figmedium text-stone-400 py-1 mb-1 tracking-wider">
+                        <span className="sm:flex-none font-figmedium text-stone-500 py-1 mb-1 tracking-wider">
                           Councilors
                         </span>
                         <hr className="flex-grow mx-2 border-t-[0.3px] border-black/20" />
@@ -40,7 +40,7 @@ export default function Officials() {
                   <ul key={index} className="flex flex-col space-y-2">
                     <li className="flex w-full py-1 sm:w-full">
                       <div className="flex flex-col sm:flex-row w-full items-start sm:items-center">
-                        <span className="hidden sm:flex-none font-figmedium text-md text-stone-400 py-1 mb-1 tracking-wider">
+                        <span className="hidden sm:flex-none font-figmedium text-md text-stone-500 py-1 mb-1 tracking-wider">
                           Councilors
                         </span>
                         <hr className="hidden sm:flex sm:flex-grow mx-2 border-t-0 border-black/20" />
@@ -56,7 +56,7 @@ export default function Officials() {
                   <ul key={index} className="flex flex-col space-y-2">
                     <li className="flex w-full py-1 sm:w-full">
                       <div className="flex flex-col sm:flex-row w-full items-start sm:items-center">
-                        <span className="sm:flex-none font-figmedium text-md text-stone-400 py-1 mb-1 tracking-wider">
+                        <span className="sm:flex-none font-figmedium text-md text-stone-500 py-1 mb-1 tracking-wider">
                           {official.position}
                         </span>
                         <hr className="flex-grow mx-2 border-t-[0.3px] border-black/20" />
