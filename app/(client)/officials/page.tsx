@@ -216,7 +216,7 @@ export default function Page() {
                       SB Secretary
                     </span>
                     <span className="text-left font-figsemibold break-words text-sm text-black">
-                      ATTY. {official.name}
+                      {official.name}
                     </span>
                     <Image
                       alt={`${official.name}`}
