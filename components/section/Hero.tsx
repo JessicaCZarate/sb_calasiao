@@ -34,10 +34,10 @@ const Hero: React.FC<HeroProps> = ({ src, title, services, subtitle }) => {
               {subtitle}
             </p>
             <div className="relative inline-block isolate">
-              <h1 className="text-[57px] leading-tight sm:text-7xl md:text-[5.3rem] font-figsemibold tracking-tight text-balance text-transparent bg-gradient-to-r from-yellow-400 to-green-800 bg-clip-text z-10">
+              <h1 className="text-[57px] leading-tight sm:text-7xl md:text-[5.3rem] lg:text-8xl font-figsemibold tracking-tight text-balance text-transparent bg-gradient-to-r from-yellow-400 to-green-800 bg-clip-text z-10">
                 {title}
               </h1>
-              <h1 className="absolute top-0 leading-tight text-[57px] sm:text-7xl md:text-[5.3rem] font-figsemibold tracking-tight text-balance text-transparent bg-gradient-to-r from-yellow-400 to-green-500 bg-clip-text blur opacity-60">
+              <h1 className="absolute top-0 leading-tight text-[57px] sm:text-7xl md:text-[5.3rem] lg:text-8xl font-figsemibold tracking-tight text-balance text-transparent bg-gradient-to-r from-yellow-400 to-green-500 bg-clip-text blur opacity-60">
                 {title}
               </h1>
             </div>
