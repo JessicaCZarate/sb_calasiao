@@ -25,10 +25,10 @@ const Hero: React.FC<HeroProps> = ({ src, title, services, subtitle }) => {
       <div className="relative isolate px-6 py-32 bg-gradient-to-b from-transparent to-99% to-slate-950 shadow">
         <div className="mx-auto max-w-2xl">
           <div
-            className={`text-center items-center flex flex-col -mt-10 -mb-16 lg:-mb-5 md:-mb-4 ${
+            className={`text-center items-center flex flex-col md:-mt-10 -mb-16 lg:-mb-5 md:-mb-4 ${
               !services
                 ? "-mb-32 -mt-[3rem] sm:-mt-[3.5rem] md:-mt-[2.5rem]"
-                : ""
+                : "-mt-12"
             }`}>
             <p className="text-lg leading-3 sm:text-xl md:text-[1.4rem] font-figsemibold text-pretty text-gray-300 tracking-wider">
               {subtitle}
