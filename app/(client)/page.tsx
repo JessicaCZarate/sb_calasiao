@@ -1,5 +1,6 @@
 import Hero from "@/components/section/Hero";
 import Officials from "@/components/section/Officials";
+import Services from "@/components/section/Services";
 export default function Home() {
   return (
     <>
@@ -10,6 +11,8 @@ export default function Home() {
         services={true}
       />
       <Officials />
+      <Services />
+      <div className="divider mb-10"></div>
     </>
   );
 }

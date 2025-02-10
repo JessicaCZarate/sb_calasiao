@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
 import { Figtree } from "next/font/google";
 import "@/app/globals.css";
 
@@ -20,9 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scrollbar-gray-700 scrollbar-thin">
-      <body
-        className={`${figtree.variable} antialiased`}>
+      <body className={`${figtree.variable} antialiased`}>
         {children}
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );

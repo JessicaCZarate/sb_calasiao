@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
 import daisyui from "daisyui";
-import require from "tailwind-scrollbar";
+import scrollbar from "tailwind-scrollbar";
 
 const config: Config = {
   content: [
@@ -26,6 +26,28 @@ const config: Config = {
         figbold: "800",
         figextrabold: "900",
       },
+      patterns: {
+        opacities: {
+          100: "1",
+          80: ".80",
+          60: ".60",
+          40: ".40",
+          20: ".20",
+          10: ".10",
+          5: ".05",
+        },
+        sizes: {
+          1: "0.25rem",
+          2: "0.5rem",
+          4: "1rem",
+          6: "1.5rem",
+          8: "2rem",
+          16: "4rem",
+          20: "5rem",
+          24: "6rem",
+          32: "8rem",
+        },
+      },
       animation: {
         "text-slide":
           "text-slide 12.5s cubic-bezier(0.83, 0, 0.17, 1) infinite",
@@ -48,7 +70,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [daisyui, require("tailwind-scrollbar")],
+  plugins: [daisyui, scrollbar, require("tailwindcss-bg-patterns")],
 };
 
 export default config;

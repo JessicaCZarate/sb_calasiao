@@ -5,14 +5,14 @@ export default function Officials() {
   let firstCouncilorDetected = false;
 
   return (
-    <section className="justify-center items-center flex pb-5 sm:pb-10 flex-col bg-slate-50 sm:bg-slate-100">
+    <section className="justify-center items-center flex pb-10 sm:pb-10 flex-col bg-slate-100 sm:bg-slate-100">
       <div className="flex text-center justify-center items-center">
         <h2 className="text-3xl sm:text-4xl tracking-wide text-black font-figmedium px-4 py-6">
           The Officials
         </h2>
       </div>
       <div className="flex flex-col lg:flex-row w-full">
-        <div className="flex flex-col w-full items-center">
+        <div className="flex flex-col w-full items-center mb-10 lg:mb-0">
           <div className="px-6 py-2 max-w-[23rem] mx-auto sm:max-w-xl sm:w-[36rem] bg-white shadow rounded-sm">
             {officials.map((official, index) => {
               const isCouncilor =
