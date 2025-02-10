@@ -1,12 +1,12 @@
 import { createClient } from "@/utils/supabase/server";
 
-export default async function Instruments() {
+export default async function Documents() {
   const supabase = await createClient();
-  const { data: instruments } = await supabase.from("instruments").select();
+  const { data: documents } = await supabase.from("documents").select();
 
   return (
-    <pre className="text-sm text-black">
-      {JSON.stringify(instruments, null, 2)}
+    <pre className="text-xs text-black">
+      {JSON.stringify(documents, null, 2)}
     </pre>
   );
 }
