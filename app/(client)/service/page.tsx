@@ -5,8 +5,8 @@ export default async function Documents() {
   const { data: documents } = await supabase.from("documents").select();
 
   return (
-    <pre className="text-xs text-black">
-      {JSON.stringify(documents, null, 2)}
+    <pre className="text-xs text-black break-words">
+      {JSON.stringify(documents)}
     </pre>
   );
 }
