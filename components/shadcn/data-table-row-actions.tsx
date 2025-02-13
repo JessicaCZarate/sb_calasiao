@@ -8,13 +8,13 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
+  // DropdownMenuRadioGroup,
+  // DropdownMenuRadioItem,
   DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
+  // DropdownMenuShortcut,
+  // DropdownMenuSub,
+  // DropdownMenuSubContent,
+  // DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "./components/dropdown-menu";
 
@@ -26,8 +26,9 @@ interface DataTableRowActionsProps<TData> {
 }
 export function DataTableRowActions<TData>({
   row,
-  labels,
-}: DataTableRowActionsProps<TData>) {
+}: // labels,
+DataTableRowActionsProps<TData>) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const document = documentSchema.parse(row.original);
 
   return (
@@ -41,11 +42,14 @@ export function DataTableRowActions<TData>({
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-[160px]">
-        <DropdownMenuItem>Edit</DropdownMenuItem>
+        <DropdownMenuItem>View Page</DropdownMenuItem>
+        <DropdownMenuItem>Preview</DropdownMenuItem>
+        <DropdownMenuItem>Download</DropdownMenuItem>
+        {/* <DropdownMenuItem>Edit</DropdownMenuItem>
         <DropdownMenuItem>Make a copy</DropdownMenuItem>
-        <DropdownMenuItem>Favorite</DropdownMenuItem>
+        <DropdownMenuItem>Favorite</DropdownMenuItem> */}
         <DropdownMenuSeparator />
-        <DropdownMenuSub>
+        {/* <DropdownMenuSub>
           <DropdownMenuSubTrigger>Labels</DropdownMenuSubTrigger>
           <DropdownMenuSubContent>
             <DropdownMenuRadioGroup value={document.label}>
@@ -61,7 +65,7 @@ export function DataTableRowActions<TData>({
         <DropdownMenuItem>
           Delete
           <DropdownMenuShortcut>⌘⌫</DropdownMenuShortcut>
-        </DropdownMenuItem>
+        </DropdownMenuItem> */}
       </DropdownMenuContent>
     </DropdownMenu>
   );
