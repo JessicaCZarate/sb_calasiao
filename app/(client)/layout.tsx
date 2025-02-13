@@ -14,7 +14,7 @@ export default function Layout({
           href="/municipal-officials"
         />
       </div>
-      <main className="relative bg-gray-100">
+      <main className="relative bg-gray-100 h-full">
         <Navbar />
         {children}
       </main>

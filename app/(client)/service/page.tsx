@@ -1,12 +1,18 @@
+"use server";
+
 import { createClient } from "@/utils/supabase/server";
+import Service from "@/components/Service";
 
-export default async function Documents() {
+export default async function ServicePage() {
   const supabase = await createClient();
-  const { data: documents } = await supabase.from("documents").select();
+  const { data, error } = await supabase.from("documents").select();
 
-  return (
-    <pre className="text-[10px] text-black break-words text-wrap">
-      {JSON.stringify(documents, null, 2)}
-    </pre>
-  );
+  if (error) {
+    console.error("Error fetching documents:", error);
+    return {
+      props: { documents: [] },
+      revalidate: 10,
+    };
+  }
+  return <Service documents={data} />;
 }

@@ -21,8 +21,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scrollbar-gray-700 scrollbar-thin">
-      <body className={`${figtree.variable} antialiased`}>
+    <html
+      lang="en"
+      className="scrollbar-gray-700 scrollbar-thin bg-gray-100 h-full">
+      <body className={`${figtree.variable} antialiased bg-gray-100 h-full`}>
         {children}
         <SpeedInsights />
         <Analytics />
