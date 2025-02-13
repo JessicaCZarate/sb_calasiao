@@ -40,10 +40,12 @@ export default function createColumns(
     {
       accessorKey: "id",
       header: ({ column }) => (
-        <DataTableColumnHeader column={column} title="ID" />
+        <DataTableColumnHeader column={column} title="ID" className="hidden" />
       ),
-      cell: ({ row }) => <div className="w-[50px]">{row.getValue("id")}</div>,
-      enableSorting: false,
+      cell: ({ row }) => (
+        <div className="w-[50px] hidden">{row.getValue("id")}</div>
+      ),
+      enableSorting: true,
       enableHiding: false,
     },
     {
@@ -65,6 +67,8 @@ export default function createColumns(
           </div>
         );
       },
+      enableSorting: true,
+      enableHiding: false,
     },
     {
       accessorKey: "heading",

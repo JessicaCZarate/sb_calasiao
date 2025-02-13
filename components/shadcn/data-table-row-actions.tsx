@@ -24,6 +24,7 @@ interface DataTableRowActionsProps<TData> {
   row: Row<TData>;
   labels: { value: string; label: string }[];
 }
+console.log("i am a doooooooooooog");
 
 export function DataTableRowActions<TData>({
   row,
