@@ -68,12 +68,17 @@ export function DataTable<TData, TValue>({
     getFacetedUniqueValues: getFacetedUniqueValues(),
   });
 
+  const selectedRows = table
+    .getSelectedRowModel()
+    .rows.map((row) => row.original);
+
   return (
     <div className="space-y-4">
       <DataTableToolbar
         table={table}
         filteredYears={filteredYears}
         filteredPriorities={filteredPriorities}
+        selectedRows={selectedRows}
       />
       <div className="rounded-md border">
         <Table>
