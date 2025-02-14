@@ -19,16 +19,17 @@ import {
 } from "./components/dropdown-menu";
 
 import { documentSchema } from "@/app/lib/schema";
+import { Document } from "@/app/lib/schema";
 
 interface DataTableRowActionsProps<TData> {
   row: Row<TData>;
   labels: { value: string; label: string }[];
+  documents: Document[];
 }
 export function DataTableRowActions<TData>({
   row,
 }: // labels,
 DataTableRowActionsProps<TData>) {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const document = documentSchema.parse(row.original);
 
   return (
@@ -43,8 +44,14 @@ DataTableRowActionsProps<TData>) {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-[160px]">
         <DropdownMenuItem>View Page</DropdownMenuItem>
-        <DropdownMenuItem>Preview</DropdownMenuItem>
-        <DropdownMenuItem>Download</DropdownMenuItem>
+        <DropdownMenuItem>
+          <a href={document.pdf_link} target="_blank" rel="noopener noreferrer">
+            Preview
+          </a>
+        </DropdownMenuItem>
+        <DropdownMenuItem>
+          <a href={document.pdf_download}>Download</a>
+        </DropdownMenuItem>
         {/* <DropdownMenuItem>Edit</DropdownMenuItem>
         <DropdownMenuItem>Make a copy</DropdownMenuItem>
         <DropdownMenuItem>Favorite</DropdownMenuItem> */}

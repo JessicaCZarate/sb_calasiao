@@ -10,7 +10,8 @@ import { DataTableRowActions } from "./data-table-row-actions";
 export default function createColumns(
   years: { value: string; label: string }[],
   priorities: { value: string; label: string }[],
-  labels: { value: string; label: string }[]
+  labels: { value: string; label: string }[],
+  documents: Document[]
 ): ColumnDef<Document>[] {
   return [
     {
@@ -133,7 +134,9 @@ export default function createColumns(
     },
     {
       id: "actions",
-      cell: ({ row }) => <DataTableRowActions row={row} labels={labels} />,
+      cell: ({ row }) => (
+        <DataTableRowActions row={row} labels={labels} documents={documents} />
+      ),
     },
   ];
 }

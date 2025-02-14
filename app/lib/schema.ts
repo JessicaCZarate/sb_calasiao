@@ -8,6 +8,9 @@ export const documentSchema = z.object({
   year: z.string(),
   label: z.string(),
   priority: z.string(),
+  pdf_preview: z.string(),
+  pdf_link: z.string(),
+  pdf_download: z.string(),
 });
 
 export type Document = z.infer<typeof documentSchema>;

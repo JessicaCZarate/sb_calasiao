@@ -41,7 +41,8 @@ export default function Service({ documents }: ServiceProps) {
   const dynamicColumns = createColumns(
     filteredYears,
     filteredPriorities,
-    filteredLabels
+    filteredLabels,
+    documents
   );
 
   return (
