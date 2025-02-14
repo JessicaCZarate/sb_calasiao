@@ -50,7 +50,12 @@ DataTableRowActionsProps<TData>) {
           </a>
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <a href={document.pdf_download}>Download</a>
+          <a
+            href={document.pdf_download}
+            target="_blank"
+            rel="noopener noreferrer">
+            Download
+          </a>
         </DropdownMenuItem>
         {/* <DropdownMenuItem>Edit</DropdownMenuItem>
         <DropdownMenuItem>Make a copy</DropdownMenuItem>
