@@ -51,12 +51,12 @@ export default function Service({ documents }: ServiceProps) {
         <p>hidden sm screen</p>
       </div>
       <div className="h-full flex-1 flex-col space-y-8 p-8 md:flex">
-        <div className="flex items-center justify-between space-y-2">
-          <div>
-            <h2 className="text-2xl font-bold tracking-normal font-figtree">
+        <div className="flex items-center justify-center space-y-2">
+          <div className="flex flex-col text-center justify-center items-center">
+            <h2 className="text-3xl sm:text-4xl tracking-wide text-black font-figmedium">
               Our Services
             </h2>
-            <p className="text-muted-foreground text-sm">
+            <p className="leading-7 text-muted-foreground text-sm">
               Here&apos;s a list of Sangguniang Bayan&apos;s Public Documents
             </p>
           </div>
