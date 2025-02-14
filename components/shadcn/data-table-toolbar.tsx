@@ -1,9 +1,16 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { Table } from "@tanstack/react-table";
 import { X } from "lucide-react";
-import JSZip from "jszip";
+// import * as XLSX from "xlsx";
+import {
+  Document as DocxDocument,
+  Packer,
+  Paragraph,
+  Table as DocxTable,
+  TableCell,
+  TableRow,
+} from "docx";
 import { saveAs } from "file-saver";
 
 import { Button } from "@/components/shadcn/components/button";
@@ -18,6 +25,13 @@ interface DataTableToolbarProps<TData> {
   selectedRows: TData[];
 }
 
+interface Document {
+  title: string;
+  heading: string;
+  pdf_download: string;
+  year: string;
+}
+
 export function DataTableToolbar<TData>({
   table,
   filteredYears,
@@ -26,33 +40,87 @@ export function DataTableToolbar<TData>({
 }: DataTableToolbarProps<TData>) {
   const isFiltered = table.getState().columnFilters.length > 0;
 
-  const handleDownload = async () => {
-    if (selectedRows.length === 1) {
-      // Single file download
-      const document = selectedRows[0] as any;
-      const link = document.pdf_download;
-      const a = document.createElement("a");
-      a.href = link;
-      a.download = link.split("/").pop();
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-    } else if (selectedRows.length > 1) {
-      // Multiple files download as zip
-      const zip = new JSZip();
-      const folder = zip.folder("documents");
+  // const handleExportToExcel = () => {
+  //   console.log("Export to Excel process started");
 
-      if (folder) {
-        for (const document of selectedRows) {
-          const response = await fetch((document as any).pdf_download);
-          const blob = await response.blob();
-          folder.file((document as any).pdf_download.split("/").pop(), blob);
-        }
-      }
+  //   const data = selectedRows.map((row) => {
+  //     const { year, title, heading, pdf_download } = row as unknown as Document;
+  //     return { year, title, heading, pdf_link: pdf_download };
+  //   });
 
-      const content = await zip.generateAsync({ type: "blob" });
-      saveAs(content, "documents.zip");
-    }
+  //   const worksheet = XLSX.utils.json_to_sheet(data);
+  //   const workbook = XLSX.utils.book_new();
+  //   XLSX.utils.book_append_sheet(workbook, worksheet, "Sheet1");
+
+  //   XLSX.writeFile(workbook, "export.xlsx");
+
+  //   console.log("Export to Excel process completed");
+  // };
+
+  const handleExportToDoc = async () => {
+    console.log("Export to Doc process started");
+
+    const data = selectedRows.map((row) => {
+      const { year, title, heading } = row as unknown as Document;
+      return { title, heading, year };
+    });
+
+    const tableRows = data.map(
+      (item) =>
+        new TableRow({
+          children: [
+            new TableCell({
+              children: [new Paragraph(item.year)],
+            }),
+            new TableCell({
+              children: [new Paragraph(item.title)],
+            }),
+            new TableCell({
+              children: [new Paragraph(item.heading)],
+            }),
+          ],
+        })
+    );
+
+    const doc = new DocxDocument({
+      sections: [
+        {
+          children: [
+            new Paragraph({
+              text: "Table of Contents",
+              heading: "Heading1",
+            }),
+            new Paragraph({
+              text: "Sangguniang Bayan Public Documents",
+              heading: "Heading3",
+            }),
+            new DocxTable({
+              rows: [
+                new TableRow({
+                  children: [
+                    new TableCell({
+                      children: [new Paragraph("Year")],
+                    }),
+                    new TableCell({
+                      children: [new Paragraph("Title")],
+                    }),
+                    new TableCell({
+                      children: [new Paragraph("Heading")],
+                    }),
+                  ],
+                }),
+                ...tableRows,
+              ],
+            }),
+          ],
+        },
+      ],
+    });
+
+    const blob = await Packer.toBlob(doc);
+    saveAs(blob, "export.docx");
+
+    console.log("Export to Doc process completed");
   };
 
   return (
@@ -99,8 +167,11 @@ export function DataTableToolbar<TData>({
           </Button>
         )}
       </div>
-      <Button className="mr-2 h-8 px-2 lg:px-3" onClick={handleDownload}>
-        Download
+      {/* <Button className="mr-2 h-8 px-2 lg:px-3" onClick={handleExportToExcel}>
+        Export to Excel
+      </Button> */}
+      <Button className="mr-2 h-8 px-2 lg:px-3" onClick={handleExportToDoc}>
+        Export
       </Button>
       <DataTableViewOptions table={table} />
     </div>

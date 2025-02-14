@@ -22,7 +22,10 @@ export default function createColumns(
             table.getIsAllPageRowsSelected() ||
             (table.getIsSomePageRowsSelected() && "indeterminate")
           }
-          onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+          onCheckedChange={(value) => {
+            console.log("Select all checkbox changed:", value);
+            table.toggleAllPageRowsSelected(!!value);
+          }}
           aria-label="Select all"
           className="translate-y-[2px]"
         />
@@ -30,11 +33,15 @@ export default function createColumns(
       cell: ({ row }) => (
         <Checkbox
           checked={row.getIsSelected()}
-          onCheckedChange={(value) => row.toggleSelected(!!value)}
+          onCheckedChange={(value) => {
+            console.log("Row checkbox changed:", row.getValue("title"), value);
+            row.toggleSelected(!!value);
+          }}
           aria-label="Select row"
           className="translate-y-[2px]"
         />
       ),
+
       enableSorting: false,
       enableHiding: false,
     },
