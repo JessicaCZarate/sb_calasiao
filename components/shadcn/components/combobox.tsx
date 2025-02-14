@@ -39,7 +39,7 @@ export function ComboboxDemo({
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-96 justify-between text-xl [&_svg]:size-5 shadow py-7 tracking-wide font-figtree">
+          className="w-96 justify-between text-xl [&_svg]:size-5 shadow py-5 tracking-wide font-figtree">
           {
             frameworks.find((framework) => framework.value === selectedValue)
               ?.label
