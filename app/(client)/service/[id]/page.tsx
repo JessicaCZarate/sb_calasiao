@@ -4,9 +4,12 @@ import PDFViewer from "@/components/PDFViewer";
 import { Button } from "@/components/shadcn/components/button";
 import Link from "next/link";
 
-export default async function Page({ params }: { params: { id: string } }) {
-  const { id } = params;
-
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
   const supabase = await createClient();
 
   const { data: document, error } = await supabase
