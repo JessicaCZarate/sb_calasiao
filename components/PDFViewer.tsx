@@ -7,7 +7,7 @@ interface PDFViewerProps {
 
 const PDFViewer: React.FC<PDFViewerProps> = ({ pdf_preview }) => {
   return (
-    <div className="w-full h-screen">
+    <div className="w-full h-[200vh] lg:h-screen">
       <embed
         src={pdf_preview}
         type="application/pdf"
