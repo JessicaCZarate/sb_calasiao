@@ -33,7 +33,7 @@ export default async function Page({
           {document.heading}
         </p>
         <div className="divider"></div>
-        <div className="flex flex-row gap-1 sm:gap-0 justify-center items-center w-full">
+        <div className="flex flex-row gap-[0.1rem] sm:gap-0 justify-center items-center w-full">
           <Link href={document.pdf_download} download>
             <Button className="scale-75 sm:scale-100 shadow">
               Download PDF File
@@ -51,7 +51,7 @@ export default async function Page({
           </Link>
         </div>
       </div>
-      <div className="pdf-viewer w-full bg-stone-900 p-1 pr-0 lg:p-3 lg:pr-2 rounded">
+      <div className="pdf-viewer w-full bg-stone-900 p-1 sm:p-3 sm:pr-2 rounded">
         <PDFViewer pdf_preview={document.pdf_preview} />
       </div>
     </div>
