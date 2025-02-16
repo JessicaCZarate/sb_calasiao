@@ -28,7 +28,7 @@ export default async function Page({
         <h1 className="text-xl text-stone-950 font-bold">{document.title}</h1>
         <p className="text-gray-800 text-md px-3">{document.heading}</p>
         <div>
-          <Link href={document.pdf_download} passHref>
+          <Link href={document.pdf_download} download>
             <Button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
               Download PDF
             </Button>

@@ -1,7 +1,7 @@
 "use client";
 
 import { Table } from "@tanstack/react-table";
-import { X } from "lucide-react";
+import { X, Search } from "lucide-react";
 // import * as XLSX from "xlsx";
 import {
   Document as DocxDocument,
@@ -118,7 +118,7 @@ export function DataTableToolbar<TData>({
     });
 
     const blob = await Packer.toBlob(doc);
-    saveAs(blob, "export.docx");
+    saveAs(blob, "data.docx");
 
     console.log("Export to Doc process completed");
   };
@@ -126,22 +126,30 @@ export function DataTableToolbar<TData>({
   return (
     <div className="flex items-center justify-between">
       <div className="flex flex-1 items-center space-x-2">
-        <Input
-          placeholder="Filter by title"
-          value={(table.getColumn("title")?.getFilterValue() as string) ?? ""}
-          onChange={(event) =>
-            table.getColumn("title")?.setFilterValue(event.target.value)
-          }
-          className="h-8 w-[150px] lg:w-[250px] bg-white"
-        />
-        <Input
-          placeholder="Filter by heading"
-          value={(table.getColumn("heading")?.getFilterValue() as string) ?? ""}
-          onChange={(event) =>
-            table.getColumn("heading")?.setFilterValue(event.target.value)
-          }
-          className="h-8 w-[150px] lg:w-[250px] bg-white"
-        />
+        <div className="relative">
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+          <Input
+            placeholder="Filter by title"
+            value={(table.getColumn("title")?.getFilterValue() as string) ?? ""}
+            onChange={(event) =>
+              table.getColumn("title")?.setFilterValue(event.target.value)
+            }
+            className="h-8 w-[150px] lg:w-[250px] bg-white pl-10"
+          />
+        </div>
+        <div className="relative">
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+          <Input
+            placeholder="Filter by heading"
+            value={
+              (table.getColumn("heading")?.getFilterValue() as string) ?? ""
+            }
+            onChange={(event) =>
+              table.getColumn("heading")?.setFilterValue(event.target.value)
+            }
+            className="h-8 w-[150px] lg:w-[250px] bg-white pl-10"
+          />
+        </div>
         {table.getColumn("year") && filteredYears.length > 0 && (
           <DataTableFacetedFilter
             column={table.getColumn("year")}
