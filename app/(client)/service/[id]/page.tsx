@@ -33,13 +33,13 @@ export default async function Page({
           {document.heading}
         </p>
         <div className="divider"></div>
-        <div className="flex flex-row justify-center items-center w-full">
+        <div className="flex flex-row gap-1 sm:gap-0 justify-center items-center w-full">
           <Link href={document.pdf_download} download>
             <Button className="scale-75 sm:scale-100 shadow">
               Download PDF File
             </Button>
           </Link>
-          <div className="divider divider-horizontal"></div>
+          <div className="hidden sm:divider sm:divider-horizontal"></div>
           <Link
             href={document.pdf_link}
             target="_blank"
