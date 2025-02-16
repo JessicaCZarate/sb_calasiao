@@ -1,6 +1,8 @@
 "use client";
 
 import * as React from "react";
+import { useRouter } from "next/navigation";
+
 import {
   ColumnDef,
   ColumnFiltersState,
@@ -72,6 +74,15 @@ export function DataTable<TData, TValue>({
     .getSelectedRowModel()
     .rows.map((row) => row.original);
 
+  const router = useRouter();
+
+  const handleRowClick = (row: TData) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const id = (row as any).id;
+    router.push(`/service/${id}`);
+    console.log(id);
+  };
+
   return (
     <div className="space-y-4">
       <DataTableToolbar
@@ -105,7 +116,9 @@ export function DataTable<TData, TValue>({
               table.getRowModel().rows.map((row) => (
                 <TableRow
                   key={row.id}
-                  data-state={row.getIsSelected() && "selected"}>
+                  data-state={row.getIsSelected() && "selected"}
+                  onClick={() => handleRowClick(row.original)}
+                  className="cursor-pointer">
                   {row.getVisibleCells().map((cell) => (
                     <TableCell key={cell.id}>
                       {flexRender(

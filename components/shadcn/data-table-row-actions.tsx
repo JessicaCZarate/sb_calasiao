@@ -43,7 +43,7 @@ DataTableRowActionsProps<TData>) {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-[160px]">
-        <DropdownMenuItem>View Page</DropdownMenuItem>
+        {/* <DropdownMenuItem>View Page</DropdownMenuItem> */}
         <DropdownMenuItem>
           <a href={document.pdf_link} target="_blank" rel="noopener noreferrer">
             Preview
