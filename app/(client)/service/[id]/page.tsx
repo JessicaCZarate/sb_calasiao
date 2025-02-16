@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { createClient } from "@/utils/supabase/server";
 import PDFViewer from "@/components/PDFViewer";
 import { Button } from "@/components/shadcn/components/button";
+import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 
 export default async function Page({
@@ -27,10 +28,19 @@ export default async function Page({
       <div className="max-w-screen-sm text-center flex flex-col p-5 gap-3">
         <h1 className="text-xl text-stone-950 font-bold">{document.title}</h1>
         <p className="text-gray-800 text-md px-3">{document.heading}</p>
-        <div>
+        <div className="divider"></div>
+        <div className="flex flex-row justify-center w-full">
           <Link href={document.pdf_download} download>
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-              Download PDF
+            <Button>Download PDF</Button>
+          </Link>
+          <div className="divider divider-horizontal"></div>
+          <Link
+            href={document.pdf_link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2">
+            <Button variant="outline">
+              Visit Google Drive <ExternalLink className="w-4 h-4 ml-1" />
             </Button>
           </Link>
         </div>
