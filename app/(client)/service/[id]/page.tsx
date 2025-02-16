@@ -1,15 +1,25 @@
 import { notFound } from "next/navigation";
-import { Document } from "@/app/lib/types/document";
-import ServicePage from "../page";
+import { createClient } from "@/utils/supabase/server";
 
-export default async function Page({ params }: { params: { id: string } }) {
-  const serviceComponent = await ServicePage();
-  const documents = (await serviceComponent.props.documents) as Document[];
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
 
-  // Find the document by ID
-  const document = documents.find((doc) => doc.id.toString() === params.id);
+  const supabase = await createClient();
+  // if (!supabase || typeof supabase.from !== "function") {
+  //   throw new Error("Supabase client not initialized correctly.");
+  // }
 
-  if (!document) {
+  const { data: document, error } = await supabase
+    .from("documents")
+    .select("*")
+    .eq("id", Number(id))
+    .single();
+
+  if (error || !document) {
     return notFound();
   }
 
