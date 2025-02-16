@@ -4,6 +4,7 @@ import { Row } from "@tanstack/react-table";
 import { MoreHorizontal } from "lucide-react";
 
 import { Button } from "./components/button";
+// import Link from "next/link";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -44,23 +45,36 @@ DataTableRowActionsProps<TData>) {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-[160px]">
         {/* <DropdownMenuItem>View Page</DropdownMenuItem> */}
-        <DropdownMenuItem>
-          <a href={document.pdf_link} target="_blank" rel="noopener noreferrer">
-            Preview
-          </a>
+        <DropdownMenuItem
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            if (document.pdf_link) {
+              window.open(document.pdf_link, "_blank", "noopener,noreferrer");
+            }
+          }}>
+          Preview
         </DropdownMenuItem>
-        <DropdownMenuItem>
-          <a
-            href={document.pdf_download}
-            target="_blank"
-            rel="noopener noreferrer">
-            Download
-          </a>
+        <DropdownMenuSeparator />
+
+        <DropdownMenuItem
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            if (document.pdf_download) {
+              window.open(
+                document.pdf_download,
+                "_blank",
+                "noopener,noreferrer"
+              );
+            }
+          }}>
+          Download
         </DropdownMenuItem>
         {/* <DropdownMenuItem>Edit</DropdownMenuItem>
         <DropdownMenuItem>Make a copy</DropdownMenuItem>
         <DropdownMenuItem>Favorite</DropdownMenuItem> */}
-        <DropdownMenuSeparator />
+        {/* <DropdownMenuSeparator /> */}
         {/* <DropdownMenuSub>
           <DropdownMenuSubTrigger>Labels</DropdownMenuSubTrigger>
           <DropdownMenuSubContent>

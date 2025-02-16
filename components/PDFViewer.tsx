@@ -7,12 +7,12 @@ interface PDFViewerProps {
 
 const PDFViewer: React.FC<PDFViewerProps> = ({ pdf_preview }) => {
   return (
-    <div className="pdf-container" style={{ width: "100%", height: "200vh" }}>
-      <iframe
+    <div className="w-full h-screen">
+      <embed
         src={pdf_preview}
+        type="application/pdf"
         width="100%"
         height="100%"
-        style={{ border: "none" }}
       />
     </div>
   );
