@@ -11,7 +11,7 @@ const VImgScroll = () => {
             <Image
               src={official.image}
               alt={official.name}
-              className="object-fill h-72 sm:h-96 w-full"
+              className="object-fill h-72 sm:h-96 w-full max-w-44 sm:max-w-none"
               width={500}
               height={800}
             />
