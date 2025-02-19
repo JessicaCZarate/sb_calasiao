@@ -39,8 +39,9 @@ export default function Page() {
                     <Image
                       alt={`${official.name}`}
                       src={official.image}
-                      width={100}
-                      height={100}
+                      width={500}
+                      height={800}
+                      objectFit="cover"
                       className="rounded-md h-80 w-auto"
                     />
                   </div>
@@ -67,8 +68,9 @@ export default function Page() {
                     <Image
                       alt={`${official.name}`}
                       src={official.image}
-                      width={100}
-                      height={100}
+                      width={500}
+                      height={800}
+                      objectFit="cover"
                       className="rounded-md h-80 w-auto"
                     />
                   </div>
@@ -99,8 +101,9 @@ export default function Page() {
                     <Image
                       alt={`${official.name}`}
                       src={official.image}
-                      width={100}
-                      height={100}
+                      width={500}
+                      height={800}
+                      objectFit="cover"
                       className="rounded-md h-80 w-auto"
                     />
                   </div>
@@ -128,8 +131,9 @@ export default function Page() {
                   <Image
                     alt={`${official.name}`}
                     src={official.image}
-                    width={100}
-                    height={100}
+                    width={500}
+                    height={800}
+                    objectFit="cover"
                     className="rounded-md h-80 w-auto"
                   />
                 </div>
@@ -165,8 +169,9 @@ export default function Page() {
                     <Image
                       alt={`${official.name}`}
                       src={official.image}
-                      width={100}
-                      height={100}
+                      width={500}
+                      height={800}
+                      objectFit="cover"
                       className="rounded-md h-80 w-auto"
                     />
                   </div>
@@ -193,8 +198,9 @@ export default function Page() {
                     <Image
                       alt={`${official.name}`}
                       src={official.image}
-                      width={100}
-                      height={100}
+                      width={500}
+                      height={800}
+                      objectFit="cover"
                       className="rounded-md h-80 w-auto"
                     />
                   </div>
@@ -221,8 +227,9 @@ export default function Page() {
                     <Image
                       alt={`${official.name}`}
                       src={official.image}
-                      width={100}
-                      height={100}
+                      width={500}
+                      height={800}
+                      objectFit="cover"
                       className="rounded-md h-80 w-auto"
                     />
                   </div>
@@ -243,8 +250,9 @@ export default function Page() {
                   <Image
                     alt={`${official.name}`}
                     src={official.image}
-                    width={100}
-                    height={100}
+                    width={500}
+                    height={800}
+                    objectFit="cover"
                     className="rounded-md h-80 w-auto"
                   />
                 </div>
