@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
 
 import {
   ColumnDef,
@@ -49,6 +50,24 @@ export function DataTable<TData, TValue>({
   const [sorting, setSorting] = React.useState<SortingState>([
     { id: "id", desc: true },
   ]);
+  const [windowSize, setWindowSize] = useState<number>(0);
+
+  useEffect(() => {
+    // Handler to call on window resize
+    function handleResize() {
+      // Set window width/height to state
+      setWindowSize(window.innerWidth);
+    }
+
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+
+    // Call handler right away so state gets updated with initial window size
+    handleResize();
+
+    // Remove event listener on cleanup
+    return () => window.removeEventListener("resize", handleResize);
+  }, []); // Empty array ensures that effect is only run on mount
 
   const table = useReactTable({
     data,
@@ -93,24 +112,45 @@ export function DataTable<TData, TValue>({
       />
       <div className="rounded-md border">
         <Table>
-          <TableHeader>
-            {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id}>
-                {headerGroup.headers.map((header) => {
-                  return (
-                    <TableHead key={header.id} colSpan={header.colSpan}>
-                      {header.isPlaceholder
-                        ? null
-                        : flexRender(
-                            header.column.columnDef.header,
-                            header.getContext()
-                          )}
-                    </TableHead>
-                  );
-                })}
-              </TableRow>
-            ))}
-          </TableHeader>
+          {windowSize <= 768 ? (
+            <TableHeader className="hidden">
+              {table.getHeaderGroups().map((headerGroup) => (
+                <TableRow key={headerGroup.id}>
+                  {headerGroup.headers.map((header) => {
+                    return (
+                      <TableHead key={header.id} colSpan={header.colSpan}>
+                        {header.isPlaceholder
+                          ? null
+                          : flexRender(
+                              header.column.columnDef.header,
+                              header.getContext()
+                            )}
+                      </TableHead>
+                    );
+                  })}
+                </TableRow>
+              ))}
+            </TableHeader>
+          ) : (
+            <TableHeader>
+              {table.getHeaderGroups().map((headerGroup) => (
+                <TableRow key={headerGroup.id}>
+                  {headerGroup.headers.map((header) => {
+                    return (
+                      <TableHead key={header.id} colSpan={header.colSpan}>
+                        {header.isPlaceholder
+                          ? null
+                          : flexRender(
+                              header.column.columnDef.header,
+                              header.getContext()
+                            )}
+                      </TableHead>
+                    );
+                  })}
+                </TableRow>
+              ))}
+            </TableHeader>
+          )}
           <TableBody>
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (

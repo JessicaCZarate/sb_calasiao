@@ -27,7 +27,7 @@ export default function createColumns(
             table.toggleAllPageRowsSelected(!!value);
           }}
           aria-label="Select all"
-          className="translate-y-[2px]"
+          className="translate-y-[2px] hidden md:flex"
         />
       ),
       cell: ({ row }) => (
@@ -38,7 +38,7 @@ export default function createColumns(
             row.toggleSelected(!!value);
           }}
           aria-label="Select row"
-          className="translate-y-[2px]"
+          className="translate-y-[2px] hidden md:flex"
         />
       ),
 
@@ -67,11 +67,22 @@ export default function createColumns(
         );
 
         return (
-          <div className="flex space-x-2">
-            {label && <Badge variant="outline">{label.label}</Badge>}
-            <span className="max-w-[300px] truncate font-medium">
-              {row.getValue("title")}
-            </span>
+          <div className="flex flex-col space-x-2 gap-2 -ml-5">
+            <div className="flex flex-row">
+              {label && (
+                <Badge variant="outline" className="hidden sm:block">
+                  {label.label}
+                </Badge>
+              )}
+              <span className="max-w-[300px]  truncate font-medium">
+                {row.getValue("title")}
+              </span>
+            </div>
+            <div className="md:hidden">
+              <span className="max-w-sm text-wrap truncate font-medium line-clamp-3 text-slate-500">
+                {row.getValue("heading")}
+              </span>
+            </div>
           </div>
         );
       },
@@ -81,11 +92,15 @@ export default function createColumns(
     {
       accessorKey: "heading",
       header: ({ column }) => (
-        <DataTableColumnHeader column={column} title="Heading" />
+        <DataTableColumnHeader
+          column={column}
+          title="Heading"
+          className="hidden md:flex"
+        />
       ),
       cell: ({ row }) => {
         return (
-          <div className="flex space-x-2">
+          <div className="md:flex space-x-2 hidden">
             <span className="max-w-[500px] truncate font-medium">
               {row.getValue("heading")}
             </span>
@@ -96,7 +111,11 @@ export default function createColumns(
     {
       accessorKey: "year",
       header: ({ column }) => (
-        <DataTableColumnHeader column={column} title="Year" />
+        <DataTableColumnHeader
+          column={column}
+          title="Year"
+          className="hidden lg:flex"
+        />
       ),
       cell: ({ row }) => {
         const year = years.find((year) => year.value === row.getValue("year"));
@@ -106,7 +125,7 @@ export default function createColumns(
         }
 
         return (
-          <div className="flex w-[100px] items-center">
+          <div className="lg:flex w-[100px] items-center hidden">
             <span>{year.label}</span>
           </div>
         );
@@ -118,7 +137,11 @@ export default function createColumns(
     {
       accessorKey: "priority",
       header: ({ column }) => (
-        <DataTableColumnHeader column={column} title="Priority" />
+        <DataTableColumnHeader
+          column={column}
+          title="Priority"
+          className="hidden lg:flex"
+        />
       ),
       cell: ({ row }) => {
         const priority = priorities.find(
@@ -130,7 +153,7 @@ export default function createColumns(
         }
 
         return (
-          <div className="flex items-center">
+          <div className="lg:flex items-center hidden">
             <span>{priority.label}</span>
           </div>
         );
@@ -142,7 +165,13 @@ export default function createColumns(
     {
       id: "actions",
       cell: ({ row }) => (
-        <DataTableRowActions row={row} labels={labels} documents={documents} />
+        <div className="md:-ml-8 lg:-ml-0 -ml-0">
+          <DataTableRowActions
+            row={row}
+            labels={labels}
+            documents={documents}
+          />
+        </div>
       ),
     },
   ];

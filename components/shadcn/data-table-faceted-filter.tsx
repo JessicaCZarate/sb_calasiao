@@ -46,7 +46,7 @@ export function DataTableFacetedFilter<TData, TValue>({
           {title}
           {selectedValues?.size > 0 && (
             <>
-              <Separator orientation="vertical" className="mx-2 h-4" />
+              <Separator orientation="vertical" className="mx-0 sm:mx-2 h-4" />
               <Badge
                 variant="secondary"
                 className="rounded-sm px-1 font-normal lg:hidden">
@@ -76,7 +76,7 @@ export function DataTableFacetedFilter<TData, TValue>({
           )}
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0" align="start">
+      <PopoverContent className="w-[150px] sm:w-[200px] p-0" align="start">
         <Command>
           <CommandInput placeholder={title} />
           <CommandList>

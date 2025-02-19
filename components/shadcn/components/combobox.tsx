@@ -17,8 +17,8 @@ import { Popover, PopoverContent, PopoverTrigger } from "./popover";
 const frameworks = [
   { value: "ordinance", label: "ORDINANCE" },
   { value: "resolution", label: "RESOLUTION" },
-  { value: "general correspondence", label: "GENERAL CORRESPONDENCE" },
-  { value: "annual budget", label: "ANNUAL BUDGET" },
+  // { value: "general correspondence", label: "GENERAL CORRESPONDENCE" },
+  // { value: "annual budget", label: "ANNUAL BUDGET" },
 ];
 
 interface ComboboxDemoProps {
@@ -39,7 +39,7 @@ export function ComboboxDemo({
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-96 justify-between text-xl [&_svg]:size-5 shadow py-5 tracking-wide font-figtree">
+          className="w-60 sm:w-72 md:w-96 justify-between text-lg sm:text-xl [&_svg]:size-5 shadow py-3 sm:py-5 tracking-wide font-figtree">
           {
             frameworks.find((framework) => framework.value === selectedValue)
               ?.label
@@ -47,7 +47,7 @@ export function ComboboxDemo({
           <ChevronsUpDown className="opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-96 p-0">
+      <PopoverContent className="w-60 sm:w-72 md:w-96 p-0">
         <Command>
           <CommandList>
             <CommandEmpty>No framework found.</CommandEmpty>
