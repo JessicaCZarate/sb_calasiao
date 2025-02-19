@@ -41,8 +41,7 @@ export default function Page() {
                       src={official.image}
                       width={500}
                       height={800}
-                      objectFit="cover"
-                      className="rounded-md h-80 w-auto"
+                      className="rounded-md h-80 w-auto object-fill"
                     />
                   </div>
                   <div className="divider"></div>
@@ -70,8 +69,7 @@ export default function Page() {
                       src={official.image}
                       width={500}
                       height={800}
-                      objectFit="cover"
-                      className="rounded-md h-80 w-auto"
+                      className="rounded-md h-80 w-auto object-fill"
                     />
                   </div>
                   <div className="divider"></div>
@@ -103,8 +101,7 @@ export default function Page() {
                       src={official.image}
                       width={500}
                       height={800}
-                      objectFit="cover"
-                      className="rounded-md h-80 w-auto"
+                      className="rounded-md h-80 w-auto object-fill"
                     />
                   </div>
                   <div className="divider"></div>
@@ -133,8 +130,7 @@ export default function Page() {
                     src={official.image}
                     width={500}
                     height={800}
-                    objectFit="cover"
-                    className="rounded-md h-80 w-auto"
+                    className="rounded-md h-80 w-auto object-fill"
                   />
                 </div>
                 <div className="divider"></div>
@@ -171,8 +167,7 @@ export default function Page() {
                       src={official.image}
                       width={500}
                       height={800}
-                      objectFit="cover"
-                      className="rounded-md h-80 w-auto"
+                      className="rounded-md h-80 w-auto object-fill"
                     />
                   </div>
                   <div className="divider"></div>
@@ -200,8 +195,7 @@ export default function Page() {
                       src={official.image}
                       width={500}
                       height={800}
-                      objectFit="cover"
-                      className="rounded-md h-80 w-auto"
+                      className="rounded-md h-80 w-auto object-fill"
                     />
                   </div>
                   <div className="divider"></div>
@@ -229,8 +223,7 @@ export default function Page() {
                       src={official.image}
                       width={500}
                       height={800}
-                      objectFit="cover"
-                      className="rounded-md h-80 w-auto"
+                      className="rounded-md h-80 w-auto object-fill"
                     />
                   </div>
                   <div className="divider"></div>
@@ -252,8 +245,7 @@ export default function Page() {
                     src={official.image}
                     width={500}
                     height={800}
-                    objectFit="cover"
-                    className="rounded-md h-80 w-auto"
+                    className="rounded-md h-80 w-auto object-fill"
                   />
                 </div>
                 <div className="divider"></div>

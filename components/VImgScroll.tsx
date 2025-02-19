@@ -1,51 +1,22 @@
 import React from "react";
+import Image from "next/image";
+import { officials } from "@/app/lib/officials";
 
 const VImgScroll = () => {
   return (
     <div className="flex w-full justify-center bg-[url('/image/hhall.JPG')] bg-cover bg-center bg-no-repeat shadow rounded-sm bg-blend-multiply bg-gray-500 items-center py-5 mt-4 lg:mt-0">
       <div className="carousel carousel-vertical rounded-lg h-72 sm:h-96">
-        <div className="carousel-item h-full">
-          <img src="https://img.daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.webp" />
-        </div>
-        <div className="carousel-item h-full">
-          <img src="https://img.daisyui.com/images/stock/photo-1565098772267-60af42b81ef2.webp" />
-        </div>
-        <div className="carousel-item h-full">
-          <img src="https://img.daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.webp" />
-        </div>
-        <div className="carousel-item h-full">
-          <img src="https://img.daisyui.com/images/stock/photo-1494253109108-2e30c049369b.webp" />
-        </div>
-        <div className="carousel-item h-full">
-          <img src="https://img.daisyui.com/images/stock/photo-1550258987-190a2d41a8ba.webp" />
-        </div>
-        <div className="carousel-item h-full">
-          <img src="https://img.daisyui.com/images/stock/photo-1559181567-c3190ca9959b.webp" />
-        </div>
-        <div className="carousel-item h-full">
-          <img src="https://img.daisyui.com/images/stock/photo-1601004890684-d8cbf643f5f2.webp" />
-        </div>
-        <div className="carousel-item h-full">
-          <img src="https://img.daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.webp" />
-        </div>
-        <div className="carousel-item h-full">
-          <img src="https://img.daisyui.com/images/stock/photo-1565098772267-60af42b81ef2.webp" />
-        </div>
-        <div className="carousel-item h-full">
-          <img src="https://img.daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.webp" />
-        </div>
-        <div className="carousel-item h-full">
-          <img src="https://img.daisyui.com/images/stock/photo-1494253109108-2e30c049369b.webp" />
-        </div>
-        <div className="carousel-item h-full">
-          <img src="https://img.daisyui.com/images/stock/photo-1550258987-190a2d41a8ba.webp" />
-        </div>
-        <div className="carousel-item h-full">
-          <img src="https://img.daisyui.com/images/stock/photo-1559181567-c3190ca9959b.webp" />
-        </div>
-        <div className="carousel-item h-full">
-          <img src="https://img.daisyui.com/images/stock/photo-1601004890684-d8cbf643f5f2.webp" />
-        </div>
+        {officials.slice(0, -1).map((official) => (
+          <div key={official.id} className="carousel-item h-full w-auto">
+            <Image
+              src={official.image}
+              alt={official.name}
+              className="object-fill h-72 sm:h-96 w-full"
+              width={500}
+              height={800}
+            />
+          </div>
+        ))}
       </div>
     </div>
   );
