@@ -15,6 +15,8 @@ const Hero: React.FC<HeroProps> = ({ src, title, services, subtitle }) => {
     heroClass = "defaultHero";
   } else if (src === "officials") {
     heroClass = "officialHero";
+  } else if (src === "about") {
+    heroClass = "aboutHero";
   } else {
     heroClass = src;
   }

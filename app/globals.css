@@ -22,6 +22,9 @@ body {
 .officialHero {
   background-image: url("/image/hall.JPG");
 }
+.aboutHero {
+  background-image: url("/image/hhall.JPG");
+}
 @layer base {
   :root {
     --background: 0 0% 100%;
