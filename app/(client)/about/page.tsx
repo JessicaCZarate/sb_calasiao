@@ -14,7 +14,9 @@ export default function Page() {
       />
       <TextContainer map={secretariat} />
       <div>
-        <pre>{JSON.stringify(employee, null, 2)}</pre>
+        <pre className="text-[10px] text-black text-wrap">
+          {JSON.stringify(employee, null, 2)}
+        </pre>
       </div>
     </section>
   );
