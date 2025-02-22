@@ -29,7 +29,7 @@ const Services = () => {
           return (
             <div
               key={index}
-              className="group w-full h-80 block max-w-md p-5 sm:p-6 bg-white hover:bg-lime-300 border border-gray-200 rounded-lg hover:scale-[1.02]  shadow text-center">
+              className="group w-full h-72 block max-w-md p-5 sm:p-6 bg-white hover:bg-yellow-300 border border-gray-200 rounded-lg hover:scale-[1.02]  shadow text-center">
               <h5 className="mb-1 text-lg sm:text-xl font-figsemibold text-gray-800 tracking-wider">
                 {serviceItem.text}
               </h5>

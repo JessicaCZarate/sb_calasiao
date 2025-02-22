@@ -26,6 +26,7 @@ export default async function Home() {
       />
       <Officials officials={data} />
       <Services />
+      <div className="divider"></div>
     </>
   );
 }

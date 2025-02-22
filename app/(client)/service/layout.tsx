@@ -5,7 +5,9 @@ export default function Layout({
 }>) {
   return (
     <>
-      <div className="relative h-full bg-slate-50">{children}</div>
+      <div className="relative h-full bg-slate-50 min-h-[100vh]">
+        {children}
+      </div>
     </>
   );
 }
