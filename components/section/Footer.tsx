@@ -24,7 +24,7 @@ const links = [
 const Footer = () => {
   return (
     <footer className="shadow bg-gray-800 -mb-1">
-      <div className="w-full mx-auto md:flex p-4 md:items-center md:justify-between">
+      <div className="w-full mx-auto gap-2 md:flex p-4 md:items-center md:justify-between">
         <span className="flex gap-2 justify-center items-center text-sm sm:text-center text-gray-400">
           <Image
             src="/image/calasiao.png"
@@ -35,6 +35,7 @@ const Footer = () => {
           />
           © 2025 Sangguninang Bayan ng Calasiao | All Rights Reserved.
         </span>
+        <div className="divider m-0"></div>
         <ul className="flex flex-wrap items-center justify-center mt-3 text-sm font-medium text-gray-400 sm:mt-0">
           {links.map((link) => (
             <Link href={link.href} key={link.text}>
