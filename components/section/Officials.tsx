@@ -7,8 +7,6 @@ interface OfficialsProps {
 export default function Officials({ officials }: OfficialsProps) {
   let firstCouncilorDetected = false;
 
-  console.log("Officials component received data:", officials);
-
   return (
     <section className="justify-center items-center flex pb-10 sm:pb-10 flex-col bg-slate-100 sm:bg-slate-100">
       <div className="flex text-center justify-center items-center">

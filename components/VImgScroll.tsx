@@ -16,7 +16,7 @@ const VImgScroll: React.FC<OfficialsProps> = ({ officials }) => {
             <Image
               src={official.image}
               alt={official.name}
-              className="object-contain h-72 sm:h-96 w-full max-w-44 sm:max-w-none"
+              className="object-fill h-72 sm:h-96 w-full max-w-44 sm:max-w-none"
               width={500}
               height={800}
             />
