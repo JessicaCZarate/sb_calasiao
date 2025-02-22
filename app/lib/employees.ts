@@ -33,19 +33,19 @@ export const employee = [
     name: "Harrold Johnson M. Gangat",
     title: "Administrative Aide III",
     image: "",
-    role: "Utility",
+    role: "Utility Section",
   },
   {
     name: "Rizaldy M. Galang",
     title: "Administrative Aide I",
     image: "",
-    role: "Utility",
+    role: "Utility Section",
   },
   {
     name: "Bryan D. Dacayanan",
     title: "Job Order Worker",
     image: "",
-    role: "Utility",
+    role: "Utility Section",
   },
   {
     name: "Anthony S. Caragay",

@@ -1,9 +1,21 @@
-import { officials } from "@/app/lib/officials";
 import Hero from "@/components/section/Hero";
 import Image from "next/image";
+import { createClient } from "@/utils/supabase/server";
+// import { Official } from "@/app/lib/schema";
 
-export default function Page() {
-  const councilors = officials.filter(
+export default async function Page() {
+  const supabase = await createClient();
+  const { data, error } = await supabase.from("officials").select();
+
+  if (error) {
+    console.error("Error fetching officials:", error);
+    return {
+      props: { data: [] },
+      revalidate: 10,
+    };
+  }
+
+  const councilors = data.filter(
     (official) => official.position.toLowerCase() === "councilor"
   );
 
@@ -17,7 +29,7 @@ export default function Page() {
       />
 
       <div className="w-full">
-        {officials.map((official, index) => {
+        {data.map((official, index) => {
           const isMayor = official.position.toLowerCase() === "mayor";
           const isViceMayor = official.position.toLowerCase() === "vice mayor";
           if (isMayor) {
@@ -139,7 +151,7 @@ export default function Page() {
           </ul>
         )}
 
-        {officials.map((official, index) => {
+        {data.map((official, index) => {
           const isSecretary = official.position.toLowerCase() == "sb secretary";
           const isLigaPresident =
             official.position.toLowerCase() === "liga president";
@@ -230,27 +242,32 @@ export default function Page() {
                 </li>
               </ul>
             );
-          } else
-            <ul key={index} className="flex flex-col space-y-2 relative w-full">
-              <li className="flex w-full flex-col">
-                <div className="flex flex-col w-full items-center justify-center space-y-2">
-                  <span className="absolute font-figmedium text-[3.2rem] leading-10 text-center w-full bottom-9 text-stone-400/40 tracking-tighter">
-                    {official.position}
-                  </span>
-                  <span className="text-left font-figsemibold break-words text-sm text-black">
-                    {official.name}
-                  </span>
-                  <Image
-                    alt={`${official.name}`}
-                    src={official.image}
-                    width={500}
-                    height={800}
-                    className="rounded-md h-80 w-auto object-fill"
-                  />
-                </div>
-                <div className="divider"></div>
-              </li>
-            </ul>;
+          } else {
+            return (
+              <ul
+                key={index}
+                className="flex flex-col space-y-2 relative w-full">
+                <li className="flex w-full flex-col">
+                  <div className="flex flex-col w-full items-center justify-center space-y-2">
+                    <span className="absolute font-figmedium text-[3.2rem] leading-10 text-center w-full bottom-9 text-stone-400/40 tracking-tighter">
+                      {official.position}
+                    </span>
+                    <span className="text-left font-figsemibold break-words text-sm text-black">
+                      {official.name}
+                    </span>
+                    <Image
+                      alt={`${official.name}`}
+                      src={official.image}
+                      width={500}
+                      height={800}
+                      className="rounded-md h-80 w-auto object-fill"
+                    />
+                  </div>
+                  <div className="divider"></div>
+                </li>
+              </ul>
+            );
+          }
         })}
       </div>
     </section>

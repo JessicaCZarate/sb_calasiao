@@ -4,7 +4,7 @@ import { useState, useMemo } from "react";
 import createColumns from "@/components/shadcn/columns";
 import { DataTable } from "@/components/shadcn/components/data-table";
 import { ComboboxDemo } from "@/components/shadcn/components/combobox";
-import { Document } from "@/app/lib/types/document";
+import { Document } from "@/app/lib/schema";
 
 interface ServiceProps {
   documents: Document[];

@@ -3,7 +3,7 @@
 import { createClient } from "@/utils/supabase/server";
 import Service from "@/components/Service";
 
-export default async function ServicePage() {
+export default async function Page() {
   const supabase = await createClient();
   const { data, error } = await supabase.from("documents").select();
 

@@ -14,3 +14,22 @@ export const documentSchema = z.object({
 });
 
 export type Document = z.infer<typeof documentSchema>;
+
+export const officialSchema = z.object({
+  id: z.number().int(),
+  name: z.string(),
+  position: z.string(),
+  image: z.string(),
+});
+
+export type Official = z.infer<typeof officialSchema>;
+
+export const employeeSchema = z.object({
+  id: z.number().int(),
+  name: z.string(),
+  title: z.string(),
+  role: z.string(),
+  image: z.string(),
+});
+
+export type Employee = z.infer<typeof employeeSchema>;

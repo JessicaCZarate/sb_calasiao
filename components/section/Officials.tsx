@@ -1,8 +1,13 @@
-import { officials } from "@/app/lib/officials";
 import VImgScroll from "@/components/VImgScroll";
+import { Official } from "@/app/lib/schema";
 
-export default function Officials() {
+interface OfficialsProps {
+  officials: Official[];
+}
+export default function Officials({ officials }: OfficialsProps) {
   let firstCouncilorDetected = false;
+
+  console.log("Officials component received data:", officials);
 
   return (
     <section className="justify-center items-center flex pb-10 sm:pb-10 flex-col bg-slate-100 sm:bg-slate-100">
@@ -71,7 +76,7 @@ export default function Officials() {
             })}
           </div>
         </div>
-        <VImgScroll />
+        <VImgScroll officials={officials} />
       </div>
     </section>
   );
