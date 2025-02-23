@@ -7,6 +7,8 @@ interface OfficialsProps {
 export default function Officials({ officials }: OfficialsProps) {
   let firstCouncilorDetected = false;
 
+  const sortedData = officials.sort((a, b) => a.id - b.id);
+
   return (
     <section className="justify-center items-center flex pb-10 sm:pb-10 flex-col bg-slate-100 sm:bg-slate-100">
       <div className="flex text-center justify-center items-center">
@@ -17,7 +19,7 @@ export default function Officials({ officials }: OfficialsProps) {
       <div className="flex flex-col lg:flex-row w-full">
         <div className="flex flex-col w-full items-center mb-10 lg:mb-0">
           <div className="px-6 py-2 max-w-[23rem] mx-auto sm:max-w-xl sm:w-[36rem] bg-white shadow rounded-sm">
-            {officials.map((official, index) => {
+            {sortedData.map((official, index) => {
               const isCouncilor =
                 official.position.toLowerCase() === "councilor";
 
