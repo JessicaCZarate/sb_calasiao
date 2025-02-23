@@ -31,10 +31,10 @@ const Footer = () => {
             alt="Calasiao Logo"
             width={26}
             height={26}
-            className="ring-1 md:ring-2 ring-green-900 rounded-full"
+            className="ring-1 h-5 w-5 ring-green-900 rounded-full"
           />
-          © 2025 Sangguninang Bayan ng Calasiao <br className="sm:hidden" />|
-          All Rights Reserved.
+          © 2025 Sangguninang Bayan ng Calasiao{" "}
+          <br className="sm:hidden hide-on-small" />| All Rights Reserved.
         </span>
         <ul className="flex flex-wrap items-center justify-center mt-5 text-sm font-figmedium text-gray-400 md:mt-0">
           {links.map((link) => (

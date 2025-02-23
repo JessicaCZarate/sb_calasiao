@@ -23,6 +23,7 @@ const Employees: React.FC<EmployeesProps> = ({ employees }) => {
               alt={employee.image}
               width={100}
               height={300}
+              className="h-auto w-auto"
             />
           </div>
         ))}

@@ -26,6 +26,12 @@ body {
   background-image: url("/image/shhall.JPG");
 }
 
+@media (max-width: 320px) {
+  .hide-on-small {
+    display: none;
+  }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
