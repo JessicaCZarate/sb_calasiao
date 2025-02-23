@@ -10,7 +10,6 @@ const TextContainer: React.FC<TextContainerProps> = ({ map }) => {
       {map.map((item, index) => (
         <figure
           key={index}
-          // className="flex flex-col p-8 text-center bg-white border-b border-gray-200 rounded-t-lg rounded-b-lg md:rounded-t-none md:rounded-ss-lg md:border-e">
           className={`flex flex-col p-8 text-center bg-white border-b border-gray-200 ${
             index === 0
               ? "rounded-t-lg rounded-b-none md:rounded-l-lg md:rounded-t-none"
