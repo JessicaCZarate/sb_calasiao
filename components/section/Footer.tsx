@@ -13,7 +13,7 @@ const links = [
   },
   {
     text: "Services",
-    href: "/services",
+    href: "/service",
   },
   {
     text: "About",
