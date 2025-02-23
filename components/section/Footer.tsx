@@ -23,7 +23,7 @@ const links = [
 
 const Footer = () => {
   return (
-    <footer className="shadow bg-gray-800 -mb-1">
+    <footer className="shadow bg-gray-100">
       <div className="w-full mx-auto gap-2 md:flex p-4 md:items-center md:justify-between">
         <span className="flex gap-2 justify-center items-center text-sm sm:text-center text-gray-400">
           <Image
@@ -31,12 +31,12 @@ const Footer = () => {
             alt="Calasiao Logo"
             width={26}
             height={26}
-            className="ring-2 ring-green-900 rounded-full"
+            className="ring-1 md:ring-2 ring-green-900 rounded-full"
           />
-          © 2025 Sangguninang Bayan ng Calasiao | All Rights Reserved.
+          © 2025 Sangguninang Bayan ng Calasiao <br className="sm:hidden" />|
+          All Rights Reserved.
         </span>
-        <div className="divider m-0"></div>
-        <ul className="flex flex-wrap items-center justify-center mt-3 text-sm font-medium text-gray-400 sm:mt-0">
+        <ul className="flex flex-wrap items-center justify-center mt-5 text-sm font-figmedium text-gray-400 md:mt-0">
           {links.map((link) => (
             <Link href={link.href} key={link.text}>
               <li className="hover:underline me-4 md:me-6">{link.text}</li>
