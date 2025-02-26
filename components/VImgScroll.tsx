@@ -11,7 +11,7 @@ const VImgScroll: React.FC<OfficialsProps> = ({ officials }) => {
   return (
     <div className="flex w-full justify-center bg-[url('/image/hhall.JPG')] bg-cover bg-center bg-no-repeat shadow rounded-sm bg-blend-multiply bg-gray-500 items-center py-5 mt-4 lg:mt-0">
       <div className="carousel carousel-vertical rounded-lg h-80 sm:h-96">
-        {sortedData.slice(0, -1).map((official) => (
+        {sortedData.map((official) => (
           <div key={official.id} className="carousel-item h-full w-full">
             <div className="relative justify-self-center w-full shadow">
               <Image
