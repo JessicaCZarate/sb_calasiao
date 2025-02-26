@@ -32,7 +32,9 @@ const Employees: React.FC<EmployeesProps> = ({ employees }) => {
               employee.role.toLowerCase() === "stenographer";
             if (isSecretary || isRecordSection || isStenographer) {
               return (
-                <li key={employee.id} className="text-center">
+                <li
+                  key={employee.id}
+                  className="text-center flex flex-col justify-center items-center">
                   <div className="divider divider-end text-gray-400 font-figlight text-xs">
                     {employee.role}
                   </div>
@@ -73,7 +75,9 @@ const Employees: React.FC<EmployeesProps> = ({ employees }) => {
             const isMessenger = employee.role.toLowerCase() === "messenger";
             if (isMessenger) {
               return (
-                <li key={employee.id} className="text-center">
+                <li
+                  key={employee.id}
+                  className="text-center flex flex-col justify-center items-center">
                   <div className="divider divider-end text-gray-400 font-figlight text-xs">
                     {employee.role}
                   </div>
