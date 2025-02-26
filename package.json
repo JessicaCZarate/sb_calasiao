@@ -8,22 +8,55 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "packageManager": "npm@11.0.0",
+  "overrides": {
+    "react": "$react",
+    "react-dom": "$react-dom"
+  },
   "dependencies": {
+    "@faker-js/faker": "^9.4.0",
     "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^2.2.0",
+    "@radix-ui/react-checkbox": "^1.1.4",
+    "@radix-ui/react-dialog": "^1.1.6",
+    "@radix-ui/react-dropdown-menu": "^2.1.6",
+    "@radix-ui/react-popover": "^1.1.6",
+    "@radix-ui/react-select": "^2.1.6",
+    "@radix-ui/react-separator": "^1.1.2",
+    "@supabase/ssr": "^0.5.2",
+    "@supabase/supabase-js": "^2.48.1",
+    "@tanstack/react-table": "^8.20.6",
+    "@vercel/analytics": "^1.4.1",
+    "@vercel/speed-insights": "^1.1.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "cmdk": "^1.0.4",
+    "docx": "^9.1.1",
+    "file-saver": "^2.0.5",
+    "framer-motion": "^12.0.6",
+    "lucide-react": "^0.474.0",
     "next": "15.1.6",
+    "next-auth": "^5.0.0-beta.25",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^3.0.1",
+    "tailwindcss-animate": "^1.0.7",
+    "xlsx": "^0.18.5",
+    "zod": "^3.24.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@types/file-saver": "^2.0.7",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "daisyui": "^4.12.23",
     "eslint": "^9",
     "eslint-config-next": "15.1.6",
     "postcss": "^8",
+    "tailwind-scrollbar": "^3.1.0",
     "tailwindcss": "^3.4.1",
+    "tailwindcss-bg-patterns": "^0.3.0",
     "typescript": "^5"
   }
 }
