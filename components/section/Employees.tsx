@@ -18,7 +18,7 @@ const Employees: React.FC<EmployeesProps> = ({ employees }) => {
       <pre className="hidden">{JSON.stringify({ employees }, null, 2)}</pre>
       <div>
         <h1 className="text-center text-gray-800 text-3xl font-figmedium py-5">
-          <span className="text-lg">Office of the</span> <br />
+          <span className="text-xl sm:text-2xl">Office of the</span> <br />
           Sangguniang Bayan Secretariat
         </h1>
       </div>
@@ -36,7 +36,7 @@ const Employees: React.FC<EmployeesProps> = ({ employees }) => {
                   <div className="divider divider-end text-gray-400 font-figlight text-xs">
                     {employee.role}
                   </div>
-                  <h2 className="text-lg py-4">{employee.role}</h2>
+                  <h2 className="text-xl sm:text-2xl py-4">{employee.role}</h2>
                   <ImageComponent image={employee} />
                 </li>
               );
@@ -48,7 +48,7 @@ const Employees: React.FC<EmployeesProps> = ({ employees }) => {
               <div className="divider divider-end text-gray-400 font-figlight text-xs">
                 Data Encoders
               </div>
-              <h2 className="text-lg py-4">Data Encoders</h2>
+              <h2 className="text-xl sm:text-2xl py-4">Data Encoders</h2>
               <div className="flex flex-wrap gap-5 justify-evenly">
                 {dataEncoders.map((emp) => (
                   <ImageComponent key={emp.id} image={emp} />
@@ -61,7 +61,7 @@ const Employees: React.FC<EmployeesProps> = ({ employees }) => {
               <div className="divider divider-end text-gray-400 font-figlight text-xs">
                 Utility Section
               </div>
-              <h2 className="text-lg py-4">Utility Section</h2>
+              <h2 className="text-xl sm:text-2xl py-4">Utility Section</h2>
               <div className="flex flex-wrap gap-5 justify-evenly">
                 {utilitySection.map((emp) => (
                   <ImageComponent key={emp.id} image={emp} />
@@ -77,7 +77,7 @@ const Employees: React.FC<EmployeesProps> = ({ employees }) => {
                   <div className="divider divider-end text-gray-400 font-figlight text-xs">
                     {employee.role}
                   </div>
-                  <h2 className="text-lg py-4">{employee.role}</h2>
+                  <h2 className="text-xl sm:text-2xl py-4">{employee.role}</h2>
                   <ImageComponent image={employee} />
                 </li>
               );
