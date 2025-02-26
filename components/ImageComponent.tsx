@@ -17,7 +17,7 @@ const ImageComponent: React.FC<ImageProps> = ({ image }) => {
         src={image.image}
         width={500}
         height={800}
-        className="rounded-md h-80 w-auto object-fill"
+        className="rounded-md h-80 w-full object-fill"
       />
       <div className="absolute bottom-0 left-0 text-left w-full max-w-[13rem] rounded-b-md bg-gradient-to-t from-slate-800/70 to-transparent ">
         <h3 className="pl-2 text-white text-base font-figmedium">
