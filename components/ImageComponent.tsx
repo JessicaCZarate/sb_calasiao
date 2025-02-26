@@ -11,7 +11,7 @@ interface ImageProps {
 
 const ImageComponent: React.FC<ImageProps> = ({ image }) => {
   return (
-    <div className="relative justify-self-center shadow">
+    <div className="relative justify-self-center shadow max-w-[13rem] w-auto h-80">
       <Image
         alt={`${image.name}`}
         src={image.image}
@@ -19,7 +19,7 @@ const ImageComponent: React.FC<ImageProps> = ({ image }) => {
         height={800}
         className="rounded-md h-80 w-auto object-fill"
       />
-      <div className="absolute bottom-0 left-0 text-left w-auto rounded-b-md bg-gradient-to-t from-slate-800/70 to-transparent ">
+      <div className="absolute bottom-0 left-0 text-left w-full rounded-b-md bg-gradient-to-t from-slate-800/70 to-transparent ">
         <h3 className="pl-2 text-white text-base font-figmedium">
           {image.name}
         </h3>
